@@ -1,0 +1,43 @@
+{
+  "feature_version": "pit-features-1",
+  "regime_version": "rule-regimes-1",
+  "strategies": {
+    "orb": {
+      "version": "1.0.0",
+      "fingerprint": "b79645cdfd1cbc51887ca1c2d7c49011061c3f73a20ef5a9a794175e8b7720cd"
+    },
+    "filtered_orb": {
+      "version": "1.0.0",
+      "fingerprint": "da71bde5a49ab20e5af8914d92c5702c33dfe6da944d5ea96c125e3b7c519396"
+    },
+    "orb_retest": {
+      "version": "1.0.0",
+      "fingerprint": "5ccca0ace2d91dc7b4d6fcfc97fbf8e6648cb092c06a2db86ad4d4d27a11e5c0"
+    },
+    "vwap_trend": {
+      "version": "1.0.0",
+      "fingerprint": "26ddca9708c415a471e9e5c76ecc6d84b81876a4f1db41304d7aa0728365ebf4"
+    },
+    "vwap_reversion": {
+      "version": "1.0.0",
+      "fingerprint": "8794ae8454cd28e8c375f44cae56615ff982e639d2ff7a337e69b6cb90f97fa8"
+    },
+    "gap_continuation": {
+      "version": "1.0.0",
+      "fingerprint": "2e90d6794d8a23ada42195e3d3c92d51654731726371fa38ced280061ed8db32"
+    },
+    "gap_fade": {
+      "version": "1.0.0",
+      "fingerprint": "9d8b44db654d2b431181d05786c4c8c1b03319682ff82586b382f546c0385784"
+    }
+  },
+  "release": "public-release-1",
+  "software_version": "0.2.0",
+  "default_recovery_mode": "conservative_exit",
+  "capabilities": [
+    "versioned strategy interface",
+    "deterministic risk veto",
+    "isolated shadow simulation",
+    "explicit evidence-gated live enablement"
+  ]
+}

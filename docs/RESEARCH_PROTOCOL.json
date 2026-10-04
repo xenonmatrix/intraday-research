@@ -1,0 +1,93 @@
+{
+  "protocol_version": "multistrategy-1",
+  "frozen_before_new_strategy_returns": true,
+  "symbols": [
+    "SPY",
+    "QQQ"
+  ],
+  "data": "FirstRate original CSV, 2022-09-30 through 2023-09-29; paired complete regular sessions only",
+  "data_status": "Previously researched. Chronological replication, NOT an untouched final holdout.",
+  "train": [
+    "2022-09-30",
+    "2023-04-01"
+  ],
+  "validation": [
+    "2023-04-01",
+    "2023-07-01"
+  ],
+  "test": [
+    "2023-07-01",
+    "2023-09-30"
+  ],
+  "date_endpoints": "End exclusive",
+  "walk_forward": "Fixed parameters; expanding prior history, monthly OOS blocks in validation and test. No parameter fitting to a later block.",
+  "selection": "Predeclared default parameters. No strategy or parameter is selected by final-test P&L. Validation veto and one-at-a-time development/validation sensitivity only.",
+  "strategies": [
+    "orb",
+    "filtered_orb",
+    "orb_retest",
+    "vwap_trend",
+    "vwap_reversion",
+    "gap_continuation",
+    "gap_fade"
+  ],
+  "directions": "Long only. Short orders unsupported and rejected.",
+  "risk": {
+    "capital_per_trade": 10,
+    "planned_loss_per_trade": 0.15,
+    "max_positions": 3,
+    "max_exposure": 30,
+    "daily_gross_loss": 1.5,
+    "attempts": 5,
+    "cash_reserve": 20,
+    "positions_per_symbol": 1,
+    "profits_replenish": false
+  },
+  "execution": "Completed 5-minute signal; next minute-open opportunity; synthetic bid/ask, conservative stop-first ordering; no fill at favorable intrabar extremes; reference entry-band/friction sizing reused",
+  "cost_scenarios": {
+    "base": {
+      "spread_bps": 1,
+      "slippage_bps": 1,
+      "fee_per_side": 0,
+      "latency_minutes": 0,
+      "fill_fraction": 1
+    },
+    "stress": {
+      "spread_bps": 5,
+      "slippage_bps": 2,
+      "fee_per_side": 0.01,
+      "latency_minutes": 1,
+      "fill_fraction": 1
+    },
+    "partial": {
+      "spread_bps": 1,
+      "slippage_bps": 1,
+      "fee_per_side": 0.01,
+      "latency_minutes": 1,
+      "fill_fraction": 0.5
+    }
+  },
+  "sensitivity": "One parameter at a time: target R 1.5/2.5 and holding time 20/40 minutes; strategy-specific thresholds 0.8/1.2 times default. Validation/development only; no final-test selection.",
+  "gates": {
+    "positive_validation_and_test_net_expectancy": true,
+    "positive_stress_test_expectancy": true,
+    "positive_day_block_bootstrap_lower_bound": true,
+    "family_alpha": 0.05,
+    "hypotheses": 7,
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 20261003,
+    "minimum_trade_days_for_interval": 20,
+    "sample_floor_note": "20 active day clusters is a minimum for reporting a resampled interval, not a universal adequate trade count or proof of edge. Precision and independent period evidence still required.",
+    "positive_without_best_day": true,
+    "max_drawdown_dollars": 1.5,
+    "minimum_positive_walk_forward_fraction": 0.6666666666666666,
+    "minimum_nonnegative_sensitivity_fraction": 0.75,
+    "test_expectancy_at_least_fraction_of_validation": 0.5,
+    "untouched_independent_test_required_for_live": true,
+    "live_feature_parity_required": true,
+    "shadow_execution_evidence_required": true,
+    "operator_live_enable_required": true
+  },
+  "arbitration": "Per symbol. Explicit eligibility and predeclared equal priority. Contradiction or equal-priority ambiguity: no trade. Cross-symbol processing in sorted symbol order with atomic shared risk reservations; no recent-P&L allocation.",
+  "live_activation": "Reused historical data cannot establish LIVE_ELIGIBLE. Acceptance gates must not be relaxed after results; live enablement requires independent evidence and explicit operator approval."
+}

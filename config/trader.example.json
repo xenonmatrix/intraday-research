@@ -1,0 +1,114 @@
+{
+  "trading": {
+    "default_mode": "READ_ONLY",
+    "capital_per_trade": "10",
+    "max_open_positions": 3,
+    "max_total_exposure": "30",
+    "max_entry_attempts_per_session": 5,
+    "one_position_per_symbol": true,
+    "buying_power_reserve": "20",
+    "symbols": [
+      "SPY",
+      "QQQ"
+    ]
+  },
+  "risk": {
+    "max_loss_per_trade_percent": "1.5",
+    "max_daily_loss_percent": "5",
+    "daily_loss_base": "max_total_exposure",
+    "profits_replenish_allowance": false
+  },
+  "strategy": {
+    "name": "orb",
+    "bar_interval_minutes": 5,
+    "opening_range_minutes": 15,
+    "breakout_offset": "0.01",
+    "stop_offset": "0.01",
+    "target_r": "2",
+    "max_hold_minutes": 30,
+    "vwap_exit": true,
+    "retrospective_entries": false
+  },
+  "market_data": {
+    "max_quote_age_seconds": 5,
+    "max_spread_percent": "0.05",
+    "min_session_dollar_volume": "10000000",
+    "future_timestamp_tolerance_seconds": 0,
+    "bars_refresh_seconds": 20,
+    "tradability_refresh_seconds": 60
+  },
+  "session": {
+    "entry_cutoff_minutes_before_close": 60,
+    "liquidation_minutes_before_close": 15,
+    "monitor_warmup_minutes": 10
+  },
+  "execution": {
+    "order_type": "market",
+    "allow_fractional": true,
+    "review_required": true,
+    "preflight_max_age_seconds": 5,
+    "pending_entry_timeout_seconds": 30,
+    "slippage_bps": "1",
+    "fee_buffer": "0.01"
+  },
+  "connectivity": {
+    "request_timeout_seconds": 8,
+    "connect_timeout_seconds": 8,
+    "stream_read_timeout_seconds": 300,
+    "initialize_timeout_seconds": 30,
+    "backoff_initial_seconds": 2,
+    "backoff_max_seconds": 30,
+    "position_backoff_max_seconds": 5,
+    "outage_threshold": 3,
+    "halt_after_seconds": 60,
+    "recovery_observations": 30,
+    "recovery_min_seconds": 300,
+    "ordinary_recovery_observations": 3,
+    "ordinary_recovery_seconds": 30,
+    "poll_seconds": 2,
+    "idle_poll_seconds": 30,
+    "account_cache_seconds": 8,
+    "account_max_age_seconds": 15,
+    "keepalive_expiry_seconds": 60
+  },
+  "clock": {
+    "health_mode": "combined_bound",
+    "max_combined_bound_ms": "50",
+    "sample_count": 1,
+    "sample_interval_seconds": 60,
+    "time_sources": [
+      "time.apple.com"
+    ],
+    "sample_timeout_seconds": 2,
+    "sample_max_age_seconds": 120
+  },
+  "host": {
+    "min_battery_percent": 50,
+    "require_ac_power": false,
+    "require_lid_open": true,
+    "require_sleep_prevention": true,
+    "health_max_age_seconds": 15,
+    "poll_seconds": 5
+  },
+  "watchdog": {
+    "heartbeat_interval_seconds": 5,
+    "heartbeat_stale_seconds": 15,
+    "check_interval_seconds": 1,
+    "restart_after_seconds": 45,
+    "startup_timeout_seconds": 45,
+    "restart_limit": 3,
+    "restart_window_seconds": 300,
+    "cycle_deadline_seconds": 15
+  },
+  "logging": {
+    "level": "INFO"
+  },
+  "analysis": {
+    "export_directory": "reports/persistent",
+    "features_only": true
+  },
+  "broker": {
+    "provider": "robinhood",
+    "account_suffix": ""
+  }
+}

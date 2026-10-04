@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "mode": "BASELINE",
+  "shadow_enabled": false,
+  "strategies": [
+    {
+      "id": "orb",
+      "status": "RESEARCH_ONLY",
+      "live_enabled": false,
+      "shadow_enabled": false,
+      "priority": 100,
+      "parameters": {}
+    },
+    {
+      "id": "filtered_orb",
+      "status": "RESEARCH_ONLY",
+      "live_enabled": false,
+      "shadow_enabled": false,
+      "priority": 100,
+      "parameters": {}
+    },
+    {
+      "id": "orb_retest",
+      "status": "RESEARCH_ONLY",
+      "live_enabled": false,
+      "shadow_enabled": false,
+      "priority": 100,
+      "parameters": {}
+    },
+    {
+      "id": "vwap_trend",
+      "status": "RESEARCH_ONLY",
+      "live_enabled": false,
+      "shadow_enabled": false,
+      "priority": 100,
+      "parameters": {}
+    },
+    {
+      "id": "vwap_reversion",
+      "status": "RESEARCH_ONLY",
+      "live_enabled": false,
+      "shadow_enabled": false,
+      "priority": 100,
+      "parameters": {}
+    },
+    {
+      "id": "gap_continuation",
+      "status": "RESEARCH_ONLY",
+      "live_enabled": false,
+      "shadow_enabled": false,
+      "priority": 100,
+      "parameters": {}
+    },
+    {
+      "id": "gap_fade",
+      "status": "RESEARCH_ONLY",
+      "live_enabled": false,
+      "shadow_enabled": false,
+      "priority": 100,
+      "parameters": {}
+    }
+  ]
+}

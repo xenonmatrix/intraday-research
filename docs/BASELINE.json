@@ -1,0 +1,20 @@
+{
+  "python": "3.14.2",
+  "dependencies": {
+    "mcp": "1.30.0",
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "h2": "4.4.1",
+    "pandas-market-calendars": "5.4.0",
+    "numpy": "2.5.3",
+    "pytest": "9.1.1"
+  },
+  "default_public_config_fingerprint": "1e8b060cbe13dabbfc6a3639bca6aa075fe39349c8ec3f734b91c8ae1b8bfa7d",
+  "strategy_fingerprint": "b245e9afd00481ba5b565869eb66bd51ee4469d51240ccef8506e3b8b1e01d06",
+  "recovery_version": "position-recovery-1",
+  "default_recovery_policy_fingerprint": "cec5e34969d540db61b4d5f6284ebd83257243631722f90848fe1501ad73d98b",
+  "component": "orb-and-position-recovery",
+  "scope": "ORB reference implementation with guarded execution and per-position recovery",
+  "default_recovery_mode": "conservative_exit",
+  "validation_scope": "Deterministic offline tests; execution evidence is separately required for deployment"
+}

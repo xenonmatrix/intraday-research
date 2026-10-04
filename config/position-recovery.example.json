@@ -1,0 +1,4 @@
+{
+  "mode": "conservative_exit",
+  "max_seconds": 15
+}

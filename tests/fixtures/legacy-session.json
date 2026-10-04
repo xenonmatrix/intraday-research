@@ -1,0 +1,11 @@
+{
+  "session_date": "2026-09-25",
+  "account_suffix": "0000",
+  "capital_envelope": "10.00",
+  "entry_notional_ceiling": "9.00",
+  "planned_loss_per_trade": "0.10",
+  "gross_realized_loss_limit": "0.50",
+  "maximum_positions": 1,
+  "approval_required": true,
+  "strategy": "orb"
+}
